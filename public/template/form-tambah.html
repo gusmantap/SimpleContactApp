@@ -1,0 +1,70 @@
+<section class="full">
+    <div id="add-new-contact">
+        <header>
+            <div class="icon">
+                <i class="icon ion-person-add"></i>
+            </div>
+            <div class="title">
+                <h3>Add New Contact</h3>
+                <p>Tambah kontak baru dan sinkronasikan data seluruh kontak ke seluruh perangkat yang terhubung</p>
+            </div>
+        </header>
+        <div class="form-tambah">
+            <form ng-submit="tambahData()">
+                <div class="row">
+                    <div class="half">
+                        <label>Title</label>
+                        <input type="text" ng-model="data.title" placeholder="Mr. / Miss. / Sir. / Madam" required>
+                    </div>
+                    <div class="half">
+                        <label>Fullname</label>
+                        <input type="text" ng-model="data.fullname" placeholder="Sukijan / John Doe / John Smith" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="half">
+                        <label>Email</label>
+                        <input type="email" ng-model="data.email" placeholder="xxxxx@xxxxx.com">
+                    </div>
+                    <div class="half">
+                        <label>Telephone</label>
+                        <input type="text" ng-model="data.phone" placeholder="089685xxxxxx">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="half">
+                        <label>Address</label>
+                        <input type="text" ng-model="data.address" placeholder="xxxx street, xxx line No. X">
+                    </div>
+                    <div class="half">
+                        <label>Company</label>
+                        <input type="text" ng-model="data.company" placeholder="PT. / CV. / FIRMA. / CORPORATE">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="half">
+                        <label>Group</label>
+                        <select ng-model="data.groupby">
+                            <option value="none">Select Group</option>
+                            <option value="Clients">Clients</option>
+                            <option value="Designer">Designer</option>
+                            <option value="Investor">Investor</option>
+                            <option value="Developer">Developer</option>
+                            <option value="Family">Family</option>
+                            <option value="Friends">Friends</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="full">
+                        <button><i class="icon ion-android-add"></i> ADD CONTACT</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<a ng-click="groupById('')" class="fab-add">
+    <i class="icon ion-android-close"></i>
+</a>
+<hr class="clearfix">

@@ -1,0 +1,392 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #e6e6e6;
+  margin: 0;
+  padding: 0; }
+
+hr.clearfix {
+  display: block;
+  width: 100%;
+  clear: both;
+  display: none; }
+
+.fab-add {
+  border-radius: 100%;
+  background: #FF1541;
+  color: #fff;
+  text-align: center;
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+  font-size: 40px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2); }
+  .fab-add:focus {
+    background: #fb002f; }
+
+nav {
+  font-family: 'Segoe UI';
+  height: 100vh;
+  position: fixed;
+  width: 25%;
+  background: #21232f;
+  padding: 30px 0px;
+  box-shadow: 10px 1px 40px rgba(0, 0, 0, 0.2);
+  float: left; }
+  nav h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 300;
+    margin-left: 30px; }
+  nav h2 {
+    margin-left: 30px;
+    color: #fff;
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: 300; }
+  nav ul {
+    padding: 0;
+    list-style-type: none; }
+    nav ul li {
+      display: block; }
+      nav ul li.active a {
+        color: #2fc7ff; }
+        nav ul li.active a:hover {
+          color: #2fc7ff; }
+      nav ul li a {
+        padding: 10px 40px;
+        display: block;
+        text-decoration: none;
+        color: #ccc;
+        font-size: 18px;
+        transition: background .1s ease; }
+        nav ul li a:hover {
+          color: #DBB814;
+          background: #0c0d11; }
+        nav ul li a i.icon {
+          margin-right: 10px; }
+  nav #group-by ul {
+    margin-top: 5px; }
+
+h2 {
+  margin: 0; }
+
+section {
+  font-family: 'Roboto';
+  width: 75%;
+  margin-left: 25%;
+  height: 100vh;
+  padding: 20px 20px;
+  float: left; }
+  section div.header {
+    height: 10%; }
+    section div.header div.title {
+      width: 25%;
+      float: left; }
+      section div.header div.title h2 {
+        line-height: 35px;
+        font-weight: 300; }
+        section div.header div.title h2 span.badge {
+          font-weight: 900;
+          padding: 5px 10px;
+          font-size: 16px;
+          background: #1BADE3;
+          border-radius: 10px;
+          color: #fff; }
+    section div.header div.filter {
+      width: 75%;
+      float: left; }
+      section div.header div.filter div.group-filter {
+        width: 100%; }
+        section div.header div.filter div.group-filter select {
+          width: 23%;
+          font-size: 20px;
+          padding: 8px 10px;
+          border: none;
+          font-family: 'Roboto';
+          box-shadow: 0 1px 1px 0 #ccc; }
+          section div.header div.filter div.group-filter select:focus {
+            outline: none; }
+        section div.header div.filter div.group-filter input {
+          border: none;
+          box-shadow: 0 1px 1px 0 #ccc;
+          width: 70%;
+          font-size: 20px;
+          padding: 10px 15px;
+          background: #f8f8f8;
+          transition: all .3s ease; }
+          section div.header div.filter div.group-filter input::-webkit-input-placeholder {
+            font-weight: 300;
+            font-family: 'Roboto'; }
+          section div.header div.filter div.group-filter input:hover {
+            background: #fff; }
+          section div.header div.filter div.group-filter input:focus {
+            outline: none;
+            width: 75%; }
+  section div.contact-view {
+    box-shadow: 0 0 1px 0 #ccc;
+    width: 100%;
+    background: #fff;
+    height: 88%; }
+    section div.contact-view:after {
+      clear: both;
+      content: "";
+      display: block; }
+    section div.contact-view div.contact-list {
+      width: 50%;
+      height: 100%;
+      float: left;
+      border-right: 1px solid #eee;
+      overflow-y: scroll;
+      position: relative; }
+      section div.contact-view div.contact-list .contact-total {
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+        margin: 0;
+        background: #245DFF;
+        color: #fff;
+        box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
+        font-weight: 100; }
+        section div.contact-view div.contact-list .contact-total:after {
+          content: "..."; }
+      section div.contact-view div.contact-list ul {
+        list-style-type: none; }
+        section div.contact-view div.contact-list ul li {
+          position: relative;
+          padding-top: 20px;
+          padding-right: 10px; }
+          section div.contact-view div.contact-list ul li:after {
+            clear: both;
+            content: "";
+            display: block; }
+          section div.contact-view div.contact-list ul li div.picture {
+            float: left;
+            width: 20%; }
+            section div.contact-view div.contact-list ul li div.picture div.avatar {
+              border-radius: 100%;
+              width: 50px;
+              height: 50px;
+              background: #ccc; }
+          section div.contact-view div.contact-list ul li div.desc {
+            float: left;
+            width: 80%;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px; }
+            section div.contact-view div.contact-list ul li div.desc .company {
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              color: #aaa; }
+            section div.contact-view div.contact-list ul li div.desc h3,
+            section div.contact-view div.contact-list ul li div.desc p {
+              margin: 5px 0; }
+            section div.contact-view div.contact-list ul li div.desc p {
+              color: #666; }
+            section div.contact-view div.contact-list ul li div.desc div.contact-available {
+              padding-left: 3px; }
+              section div.contact-view div.contact-list ul li div.desc div.contact-available span {
+                margin-right: 10px;
+                color: red; }
+                section div.contact-view div.contact-list ul li div.desc div.contact-available span i {
+                  margin-right: 5px; }
+    section div.contact-view div.contact-detail {
+      width: 50%;
+      height: 100%;
+      float: left;
+      overflow-y: scroll; }
+      section div.contact-view div.contact-detail .contact-header {
+        background: #fff;
+        padding: 30px 0;
+        padding-right: 30px; }
+        section div.contact-view div.contact-detail .contact-header:after {
+          clear: both;
+          content: "";
+          display: block; }
+        section div.contact-view div.contact-detail .contact-header .picture {
+          width: 20%;
+          float: left; }
+          section div.contact-view div.contact-detail .contact-header .picture .avatar {
+            background: #eee;
+            border-radius: 100%;
+            height: 70px;
+            width: 70px;
+            margin: 0 auto; }
+        section div.contact-view div.contact-detail .contact-header .desc {
+          width: 79%;
+          float: left;
+          position: relative;
+          padding-left: 30px; }
+          section div.contact-view div.contact-detail .contact-header .desc span.company {
+            right: 0;
+            position: absolute; }
+          section div.contact-view div.contact-detail .contact-header .desc h2,
+          section div.contact-view div.contact-detail .contact-header .desc p {
+            margin: 4px 0; }
+          section div.contact-view div.contact-detail .contact-header .desc p {
+            color: #666;
+            margin-bottom: 10px; }
+          section div.contact-view div.contact-detail .contact-header .desc .contact-action button {
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            font-weight: 500;
+            font-family: 'Roboto';
+            color: #fff;
+            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2); }
+            section div.contact-view div.contact-detail .contact-header .desc .contact-action button i {
+              margin-right: 5px; }
+            section div.contact-view div.contact-detail .contact-header .desc .contact-action button.contact-edit {
+              background: #d4ce34; }
+            section div.contact-view div.contact-detail .contact-header .desc .contact-action button.contact-delete {
+              background: #d32f2f; }
+      section div.contact-view div.contact-detail .contact-body ul {
+        list-style-type: none; }
+        section div.contact-view div.contact-detail .contact-body ul li {
+          padding: 25px 0;
+          padding-left: 20px; }
+          section div.contact-view div.contact-detail .contact-body ul li h4 {
+            font-size: 20px;
+            margin: 0;
+            margin-bottom: 5px;
+            color: #555; }
+            section div.contact-view div.contact-detail .contact-body ul li h4 i {
+              margin-right: 10px; }
+          section div.contact-view div.contact-detail .contact-body ul li p {
+            margin: 0;
+            color: #999; }
+  section div#add-new-contact {
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 1px 2px 0 #ccc; }
+    section div#add-new-contact header {
+      padding: 0 50px;
+      padding-top: 10px; }
+      section div#add-new-contact header:after {
+        clear: both;
+        content: "";
+        display: block; }
+      section div#add-new-contact header div.icon {
+        float: left; }
+        section div#add-new-contact header div.icon i {
+          font-size: 70px;
+          color: #686868; }
+      section div#add-new-contact header div.title {
+        width: 70%;
+        float: left;
+        padding-left: 20px;
+        padding-top: 10px; }
+        section div#add-new-contact header div.title h3 {
+          margin: 0;
+          font-size: 26px;
+          font-weight: 900;
+          color: #686868; }
+        section div#add-new-contact header div.title p {
+          font-size: 14px;
+          font-weight: 300;
+          margin: 0; }
+    section div#add-new-contact div.form-tambah {
+      padding: 30px 0; }
+      section div#add-new-contact div.form-tambah .row {
+        width: 100%;
+        padding: 0 50px; }
+        section div#add-new-contact div.form-tambah .row:after {
+          clear: both;
+          content: "";
+          display: block; }
+        section div#add-new-contact div.form-tambah .row .full {
+          margin-top: 50px;
+          width: 100%;
+          position: relative; }
+          section div#add-new-contact div.form-tambah .row .full button {
+            margin-left: 10px;
+            color: #fff;
+            right: 10px;
+            bottom: 10px;
+            position: absolute;
+            padding: 10px 40px;
+            border-radius: 2px;
+            border: none;
+            font-family: 'Roboto';
+            font-weight: 800;
+            background: #2b3f72; }
+            section div#add-new-contact div.form-tambah .row .full button i {
+              margin-right: 10px; }
+        section div#add-new-contact div.form-tambah .row .half {
+          width: 50%;
+          float: left;
+          padding: 0 10px; }
+          section div#add-new-contact div.form-tambah .row .half label {
+            display: block;
+            font-weight: 800;
+            color: #777;
+            margin: 5px 0; }
+          section div#add-new-contact div.form-tambah .row .half input,
+          section div#add-new-contact div.form-tambah .row .half select {
+            margin-bottom: 30px;
+            display: block;
+            border: none;
+            background: #f8f8f8;
+            padding: 10px 10px;
+            font-size: 16px;
+            font-weight: 300;
+            width: 100%; }
+            section div#add-new-contact div.form-tambah .row .half input:focus,
+            section div#add-new-contact div.form-tambah .row .half select:focus {
+              background: #eee;
+              outline: none; }
+            section div#add-new-contact div.form-tambah .row .half input::-webkit-input-placeholder,
+            section div#add-new-contact div.form-tambah .row .half select::-webkit-input-placeholder {
+              font-family: 'Roboto';
+              font-weight: 300; }
+
+.container-login {
+  width: 100%;
+  height: 100vh;
+  padding: 10px 15%;
+  background: #21232f;
+  font-family: 'Segoe UI';
+  color: #fff;
+  text-align: center; }
+  .container-login div.container-form {
+    width: 80%;
+    margin: auto;
+    padding: 0 15%; }
+    .container-login div.container-form input {
+      display: block;
+      width: 100%;
+      padding: 20px 20px;
+      margin: 20px 0;
+      border: none;
+      background: #36394d;
+      font-family: 'Segoe UI';
+      color: #fff; }
+    .container-login div.container-form button {
+      background: #253280;
+      width: 100%;
+      padding: 20px 20px;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      font-family: 'Segoe UI'; }
+  .container-login h1 {
+    font-weight: 300;
+    font-size: 60px;
+    margin-bottom: 0; }
+    .container-login h1 i {
+      margin-right: 20px; }
+  .container-login p {
+    margin-top: 5px;
+    font-weight: 300;
+    font-size: 20px; }
+    .container-login p:before {
+      content: open-quote; }
+    .container-login p:after {
+      content: close-quote; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,62 @@
+<nav ng-class="{'show':nav == true}">
+    <h1>Manage Contacts</h1>
+    <div id="status-contact">
+        <ul>
+            <li ng-class="{'active':search.group == ''}">
+                <a href="" ng-click="groupById('')">
+                    <i class="icon ion-android-contact"></i> All Contacts
+                </a>
+            </li>
+            <li ng-class="{'active':search.group == 'add'}">
+                <a href="" ng-click="addContact()">
+                    <i class="icon ion-android-add"></i> Add Contact
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="group-by">
+        <h2>Group By</h2>
+        <ul>
+            <li ng-class="{'active':search.group == 'Clients'}">
+                <a href="" ng-click="groupById('Clients')">
+                    <i class="icon ion-network"></i> Clients
+                </a>
+            </li>
+            <li ng-class="{'active':search.group == 'Designer'}">
+                <a href="" ng-click="groupById('Designer')">
+                    <i class="icon ion-podium"></i> Designer
+                </a>
+            </li>
+            <li ng-class="{'active':search.group == 'Investor'}">
+                <a href="" ng-click="groupById('Investor')">
+                    <i class="icon ion-cash"></i> Investor
+                </a>
+            </li>
+            <li ng-class="{'active':search.group == 'Developer'}">
+                <a href="" ng-click="groupById('Developer')">
+                    <i class="icon ion-code"></i> Developer
+                </a>
+            </li>
+            <li ng-class="{'active':search.group == 'Family'}">
+                <a href="" ng-click="groupById('Family')">
+                    <i class="icon ion-ios-people"></i> Family
+                </a>
+            </li>
+            <li ng-class="{'active':search.group == 'Friends'}">
+                <a href="" ng-click="groupById('Friends')">
+                    <i class="icon ion-person-stalker"></i> Friend
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div ng-class="{'overlay':nav == true}" ng-click="closeAll()"></div>
+<div ui-view="mainDash">
+    
+</div>
+
+<!-- <a ng-hide="" href="#/admin/add" class="fab-add">
+    <i class="icon ion-ios-personadd"></i>
+</a>
+<hr class="clearfix">
+ -->

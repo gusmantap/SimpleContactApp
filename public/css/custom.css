@@ -1,0 +1,46 @@
+body {
+	overflow-y: scroll;
+	font-family: 'ubuntu';
+}
+.ng-enter {
+	opacity: 0;
+	transition: all .3s ease;
+	transform: translateY(40%);
+	-webkit-transform: translateY(40%);
+	-moz-transform: translateY(40%);
+}
+.ng-enter-active {
+	opacity: 1;
+	transform: translateY(0%);
+	-webkit-transform: translateY(0%);
+	-moz-transform: translateY(0%);
+}
+li.item.ng-leave {
+	transition:opacity .3s ease;
+	transition-delay: .1s;
+	transform: translateY(0%);
+	-webkit-transform: translateY(0%);
+	-moz-transform: translateY(0%);
+	opacity: 1;
+}
+li.item.ng-leave-active {
+	transform: translateY(20%);
+	transform: translateY(20%);
+	opacity: 0;
+	background: #FFFEB5;
+}
+
+div.title.ng-enter {
+	opacity: 0;
+	transform: translateX(0%);
+	-webkit-transform: translateX(0%);
+	-moz-transform: translateX(0%);
+	background: #06CA18;
+	transition: all .1s ease;
+}
+div.title.ng-enter-active {
+	opacity: 1;
+	transform: translateX(0%);
+	-webkit-transform: translateX(0%);
+	-moz-transform: translateX(0%);
+}

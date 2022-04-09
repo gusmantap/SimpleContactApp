@@ -1,0 +1,128 @@
+<section>
+    <div class="header">
+        <div class="title" ng-if="detailPanel == false">
+            <div class="icon-bar">
+                <button ng-click="openNav()">
+                    <i class="icon ion-navicon"></i>
+                </button>
+            </div>
+            <div class="title-bar">
+            <h2>{{search.group}} <span ng-show='search.group.length == 0'>All Contacts</span> <span class="badge">{{filterContact.length}}</span></h2>
+            </div>
+        </div>
+        <div class="filter">
+            <div class="group-filter">
+                <select ng-model="search.selectBy" ng-selected="filtering()">
+                    <option value="all">Filter By</option>
+                    <option value="name">Name</option>
+                    <option value="title">Title</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                    <option value="address">Address</option>
+                    <option value="company">Company</option>
+                </select>
+                <input type="text" placeholder="Masukan kata kunci untuk melakukan pencarian kontak" ng-model="search.q" ng-keyup="filtering()">
+            </div>
+        </div>
+    </div>
+    <div class="contact-view">
+        <div class="contact-list">
+<!--             <div style="text-align:center;padding:40px 10px;" ng-if="filterContact.length == 0">
+                <h3 style="margin:0">Tidak Ditemukan</h3>
+                <p style="margin:0"></p>
+            </div> -->
+
+            <ul ng-if="contact">
+                <li ng-if="search.q.length > 0">
+                    <p style="margin-top:0;">Hasil pencarian untuk kata kunci <i><b><u>"{{search.q}}"</u></b></i></p>
+                </li>
+                <li ng-if="filterContact.length == 0" style="padding:10px 30px;text-align:center;">
+                    <h3 style="margin-bottom:0px;">Tidak ditemukan</h3>
+                    <p style="margin-top:0;font-size:12px">Anda Belum menambahkan kontak. klik tombol di pojok bawah kanan untuk menambahkan kontak.</p>
+                    <!-- <p ng-if='search.q' style="margin-top:0;">Tidak Menemukan apapun untuk kata kunci <i><b><u>"{{search.q}}"</u></b></i></p>
+                    <i style="color:#999;font-size:60px;" class="icon ion-flag"></i> -->
+                </li>
+                <li class="item" ng-repeat="item in filterContact | filter:filtering() | orderBy:'title'" ng-click="viewClick(this.item._id)">
+                    <div class="picture">
+                        <div class="avatar">
+                            <i class="ion-person"></i>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <span ng-if="item.groupby !== 'none'" class="company">
+                            {{item.groupby}}
+                        </span>
+                        <h3>{{item.title}}</h3>
+                        <p>{{item.name}}</p>
+                        <div class="contact-available">
+                            <span ng-if="item.email">
+                                <i class="icon ion-ios-email"></i> 
+                                Email
+                            </span>
+                            <span ng-if="item.phone">
+                                <i class="icon ion-ios-telephone"></i>
+                                Telephone
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <div  id="overlay-detail"></div>
+        <div ng-class="{'show':detailPanel == true}" class="contact-detail">
+            <div ng-if="detailContact" ng-repeat="item in detailContact">
+                <div class="contact-header">
+                    <div id="btn-close">
+                        <button ng-click="closeAll()">
+                            <i class="icon ion-android-close"></i>
+                        </button>
+                    </div>
+                    <div class="picture">
+                        <div class="avatar">
+                            <i class="ion-person"></i>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <span class="company">
+                                {{item.company}}
+                            </span>
+                        <h2>{{item.title}}</h2>
+                        <p>{{item.name}}</p>
+                        <div class="contact-action">
+                            <button class="contact-edit" ng-click="directUpdate(this.item._id)">
+                                <i class="icon ion-edit"></i> EDIT
+                            </button>
+                            <button class="contact-delete" ng-click="deleteData(this.item._id)">
+                                <i class="icon ion-trash-a"></i> HAPUS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- contact-header -->
+                <div class="contact-body">
+                    <ul>
+                        <li ng-if="item.email">
+                            <h4><i class="icon ion-email"></i>Email</h4>
+                            <p>{{item.email}}</p>
+                        </li>
+                        <li ng-if="item.phone">
+                            <h4><i class="icon ion-ios-telephone"></i>Telephone</h4>
+                            <p>{{item.phone}}</p>
+                        </li>
+                        <li ng-if="item.address">
+                            <h4><i class="icon ion-map"></i>Address</h4>
+                            <p>{{item.address}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<a ng-if="detailPanel == false" ng-click="addContact()" style="background:green" class="fab-add">
+    <i class="icon ion-ios-personadd"></i>
+</a>
+<hr class="clearfix">

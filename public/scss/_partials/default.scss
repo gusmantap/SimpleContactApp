@@ -1,0 +1,510 @@
+@include fontface('Roboto', '../fonts/Roboto-Regular.ttf');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: $bgbody;
+    margin: 0;
+    padding: 0;
+}
+
+hr.clearfix {
+    display: block;
+    width: 100%;
+    clear: both;
+    display: none;
+}
+
+.fab-add {
+    border-radius: 100%;
+    background: $buttonfab;
+    color: #fff;
+    text-align: center;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    font-size: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
+    &:focus {
+        background: darken($buttonfab, 5%);
+    }
+}
+
+nav {
+    @include segoe;
+    height: 100vh;
+    position: fixed;
+    width: 25%;
+    background: $bgnav;
+    padding: 30px 0px;
+    box-shadow: 10px 1px 40px rgba(0, 0, 0, 0.2);
+    float: left;
+    h1 {
+        margin: 0;
+        color: #fff;
+        font-size: 26px;
+        font-weight: 300;
+        margin-left: 30px;
+    }
+    h2 {
+        margin-left: 30px;
+        color: #fff;
+        margin-bottom: 0;
+        font-size: 24px;
+        font-weight: 300;
+    }
+    ul {
+        padding: 0;
+        list-style-type: none;
+        li {
+            display: block;
+            &.active {
+                a {
+                    color: $active;
+                    &:hover {
+                        color: $active;
+                    }
+                }
+            }
+            a {
+                padding: 10px 40px;
+                display: block;
+                text-decoration: none;
+                color: #ccc;
+                font-size: 18px;
+                transition: background .1s ease;
+                &:hover {
+                    color: #DBB814;
+                    background: darken($bgnav, 10%);
+                }
+                i.icon {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    #group-by {
+        ul {
+            margin-top: 5px;
+        }
+    }
+}
+
+h2 {
+    margin: 0;
+}
+
+section {
+    @include roboto;
+    width: 75%;
+    margin-left: 25%;
+    height: 100vh;
+    padding: 20px 20px;
+    float: left;
+    div.header {
+        height: 10%;
+        div.title {
+            width: 25%;
+            float: left;
+            div.icon-bar {
+                // width:20%;
+                // // float:left;
+                display: none;
+            }
+            div.title-bar {
+                width: 100%;
+                // float:m;
+            }
+            h2 {
+                line-height: 35px;
+                font-weight: 300;
+                span.badge {
+                    font-weight: 900;
+                    padding: 5px 10px;
+                    font-size: 16px;
+                    background: #1BADE3;
+                    border-radius: 10px;
+                    color: #fff;
+                }
+            }
+        }
+        div.filter {
+            width: 75%;
+            float: left;
+            div.group-filter {
+                width: 100%;
+                select {
+                    width: 23%;
+                    font-size: 20px;
+                    padding: 8px 10px;
+                    border: none;
+                    box-shadow: 0 1px 1px 0 #ccc;
+                    @include roboto;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                input {
+                    border: none;
+                    box-shadow: 0 1px 1px 0 #ccc;
+                    width: 70%;
+                    font-size: 20px;
+                    padding: 10px 15px;
+                    background: #f8f8f8;
+                    transition: all .3s ease;
+                    &::-webkit-input-placeholder {
+                        font-weight: 300;
+                        @include roboto;
+                    }
+                    &:hover {
+                        background: #fff;
+                    }
+                    &:focus {
+                        outline: none;
+                        width: 75%;
+                    }
+                }
+            }
+        }
+    }
+    div.contact-view {
+        box-shadow: 0 0 1px 0 #ccc;
+        width: 100%;
+        background: #fff;
+        height: 88%;
+        @include clearfix;
+        div.contact-list {
+            width: 50%;
+            height: 100%;
+            float: left;
+            border-right: 1px solid #eee;
+            overflow-y: scroll;
+            position: relative;
+            .contact-total {
+                text-align: center;
+                width: 100%;
+                padding: 10px 0;
+                margin: 0;
+                background: #245DFF;
+                color: #fff;
+                box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
+                font-weight: 100;
+                &:after {
+                    content: "...";
+                }
+            }
+            ul {
+                list-style-type: none;
+                li {
+                    @include clearfix;
+                    position: relative;
+                    padding-top: 20px;
+                    padding-right: 10px;
+                    div.picture {
+                        float: left;
+                        width: 20%;
+                        div.avatar {
+                            border-radius: 100%;
+                            width: 50px;
+                            height: 50px;
+                            background: #ccc;
+                            overflow:hidden;
+                            i {
+                                line-height: 70px;
+                                padding:7px;
+                                font-size: 50px;
+                                color: #aaa;
+                            }
+                        }
+                    }
+                    &:last-child {
+                        div.desc {
+                            border-bottom: none;
+                        }
+                    }
+                    div.desc {
+                        float: left;
+                        width: 80%;
+                        border-bottom: 1px solid #eee;
+                        padding-bottom: 20px;
+                        .company {
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            color: #aaa;
+                        }
+                        h3,
+                        p {
+                            margin: 5px 0;
+                        }
+                        p {
+                            color: #666;
+                        }
+                        div.contact-available {
+                            padding-left: 3px;
+                            span {
+                                margin-right: 10px;
+                                color: red;
+                                i {
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        div.contact-detail {
+            width: 50%;
+            height: 100%;
+            float: left;
+            overflow-y: scroll;
+            .contact-header {
+                background: #fff;
+                padding: 30px 0;
+                padding-right: 30px;
+                @include clearfix;
+                #btn-close {
+                    width: 100%;
+                    display: none;
+                }
+                .picture {
+                    width: 20%;
+                    float: left;
+                    .avatar {
+                        background: #eee;
+                        border-radius: 100%;
+                        height: 70px;
+                        width: 70px;
+                        margin: 0 auto;
+                        overflow:hidden;
+                        i {
+                            color:#aaa;
+                            font-size: 73px;
+                            padding: 10px
+                        }
+                    }
+                }
+                .desc {
+                    width: 79%;
+                    float: left;
+                    position: relative;
+                    padding-left: 30px;
+                    span.company {
+                        right: 0;
+                        position: absolute;
+                    }
+                    h2,
+                    p {
+                        margin: 4px 0;
+                    }
+                    p {
+                        color: #666;
+                        margin-bottom: 10px;
+                    }
+                    .contact-action {
+                        button {
+                            border: none;
+                            padding: 10px 20px;
+                            margin-right: 10px;
+                            font-weight: 500;
+                            color: #fff;
+                            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+                            @include roboto;
+                            i {
+                                margin-right: 5px;
+                            }
+                            &.contact-edit {
+                                background: #d4ce34;
+                            }
+                            &.contact-delete {
+                                background: #d32f2f;
+                            }
+                        }
+                    }
+                }
+            }
+            .contact-body {
+                ul {
+                    list-style-type: none;
+                    li {
+                        padding: 25px 0;
+                        padding-left: 20px;
+                        h4 {
+                            font-size: 20px;
+                            margin: 0;
+                            margin-bottom: 5px;
+                            color: #555;
+                            i {
+                                margin-right: 10px;
+                            }
+                        }
+                        p {
+                            margin: 0;
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    div#add-new-contact {
+        background: #fff;
+        width: 100%;
+        box-shadow: 0 1px 2px 0 #ccc;
+        header {
+            padding: 0 50px;
+            padding-top: 10px;
+            @include clearfix;
+            div.icon {
+                float: left;
+                i {
+                    font-size: 70px;
+                    color: #686868;
+                }
+            }
+            div.title {
+                width: 70%;
+                float: left;
+                padding-left: 20px;
+                padding-top: 10px;
+                h3 {
+                    margin: 0;
+                    font-size: 26px;
+                    font-weight: 900;
+                    color: #686868;
+                }
+                p {
+                    font-size: 14px;
+                    font-weight: 300;
+                    margin: 0;
+                }
+            }
+        }
+        div.form-tambah {
+            padding: 30px 0;
+            .row {
+                width: 100%;
+                padding: 0 50px;
+                @include clearfix;
+                .full {
+                    margin-top: 50px;
+                    width: 100%;
+                    position: relative;
+                    button {
+                        margin-left: 10px;
+                        color: #fff;
+                        right: 10px;
+                        bottom: 10px;
+                        position: absolute;
+                        padding: 10px 40px;
+                        border-radius: 2px;
+                        border: none;
+                        font-family: 'Roboto', 'ubuntu', sans-serif;
+                        font-weight: 800;
+                        background: #2b3f72;
+                        i {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+                .half {
+                    width: 50%;
+                    float: left;
+                    padding: 0 10px;
+                    label {
+                        display: block;
+                        font-weight: 800;
+                        color: #777;
+                        margin: 5px 0;
+                    }
+                    input,
+                    select {
+                        margin-bottom: 30px;
+                        display: block;
+                        border: none;
+                        background: #f8f8f8;
+                        padding: 10px 10px;
+                        font-size: 16px;
+                        font-weight: 300;
+                        width: 100%;
+                        &:focus {
+                            background: #eee;
+                            outline: none;
+                        }
+                    }
+                    input::-webkit-input-placeholder {
+                        @include roboto;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-login {
+    background: $bgnav;
+}
+
+.container-login {
+    width: 100%;
+    padding: 10px 15%;
+    background: $bgnav;
+    color: #fff;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    @include roboto;
+    div.container-form {
+        width: 80%;
+        margin: auto;
+        padding: 0 15%;
+        input {
+            display: block;
+            width: 100%;
+            padding: 20px 20px;
+            margin: 20px 0;
+            border: none;
+            background: lighten($bgnav, 10%);
+            color: #fff;
+            @include segoe;
+        }
+        button {
+            background: #253280;
+            width: 100%;
+            padding: 20px 20px;
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            @include segoe;
+        }
+    }
+    h1 {
+        font-weight: 300;
+        font-size: 60px;
+        margin-bottom: 0;
+        i {
+            margin-right: 20px;
+        }
+    }
+    p {
+        margin-top: 5px;
+        font-weight: 300;
+        font-size: 20px;
+        &:before {
+            content: open-quote;
+        }
+        &:after {
+            content: close-quote;
+        }
+    }
+}

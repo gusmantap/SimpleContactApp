@@ -1,0 +1,36 @@
+@mixin clearfix {
+    &:after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+}
+
+// Media Queries Responsive Design
+@mixin phone() {
+    @media screen and(max-width: 768px) {
+        @content;
+    }
+}
+@mixin netbook {
+	@media screen and(max-width: 1024px){
+		@content;
+	}
+}
+
+
+// Font
+@mixin fontface($name, $src) {
+    @font-face {
+        font-family: $name;
+        src:url($src) format('truetype');
+    }
+}
+@mixin roboto {
+    font-family: 'Roboto', 'Ubuntu', sans-serif;
+}
+
+@mixin segoe {
+    font-family: 'Segoe UI', 'Ubuntu', sans-serif;
+}
+

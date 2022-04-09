@@ -1,0 +1,359 @@
+@include phone {
+    body {
+        overflow: hidden;
+    }
+    .fab-add {
+        height: 70px;
+        width: 70px;
+        line-height: 70px;
+        font-size: 40px;
+        bottom: 10px;
+        right: 10px;
+    }
+    nav {
+        width: 80%;
+        z-index: 50;
+        padding: 40px 0;
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        transition: all .3s ease;
+        box-shadow: none;
+        &.show {
+            transform: translateX(0%);
+            -webkit-transform: translateX(0%);
+            -moz-transform: translateX(0%);
+        }
+        h1 {
+            display: none;
+        }
+        ul li a {
+            padding: 10px 30px;
+        }
+    }
+    section {
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+        padding: 10px;
+        display: block;
+        &.full {
+            padding: 0;
+        }
+        div.header {
+            width: 100%;
+            transition: all .3s ease;
+            /* height: 140px;*/
+            div.title {
+                width: 100%;
+                text-align: center;
+                color: #fff;
+                position: fixed;
+                z-index: 100;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: $bgnav;
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+                div.icon-bar {
+                    width: 20%;
+                    float: left;
+                    display: block;
+                    button {
+                        border: none;
+                        color: #fff;
+                        background: transparent;
+                        width: 100%;
+                        font-size: 30px;
+                        line-height: 55px;
+                        &:focus {
+                            outline: none;
+                            background: darken($bgnav, 10%);
+                        }
+                    }
+                }
+                div.title-bar {
+                    width: 60%;
+                    float: left;
+                }
+                h2 {
+                    padding: 10px 0;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    font-size: 16px;
+                    span.badge {
+                        display: none;
+                    }
+                }
+            }
+            div.filter {
+                margin-top: 40px;
+                width: 100%;
+                div.group-filter {
+                    width: 100%;
+                    margin: 20px 0;
+                    padding: 10px 0;
+                    select {
+                        font-size: 12px;
+                        width: 100%;
+                    }
+                    input {
+                        width: 100%;
+                        padding: 10px;
+                        font-size: 12px;
+                        &:focus {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        div.contact-view {
+            /* margin: 100px 0;*/
+            background: none;
+            height: auto;
+            box-shadow: none;
+            div.contact-list {
+                width: 100%;
+                overflow-y: auto;
+                height: auto;
+                float: none;
+                margin: 20px auto;
+                background: #fff;
+                ul {
+                    padding: 0;
+                    li {
+                        /* padding:10px;*/
+                        padding: 0 20px;
+                        &:hover {
+                            background: #F1F9FF;
+                        }
+                        div.avatar {
+                            display: none;
+                        }
+                        div.desc {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            div.contact-detail {
+                display: none;
+                &.show {
+                    display: block;
+                    width: auto;
+                    height: auto;
+                    margin: 0px auto;
+                    background: #fff;
+                    float: none;
+                    overflow-y: hidden;
+                    box-shadow: 0 1px 40px 0 rgba(0, 0, 0, 0.3);
+                    position: fixed;
+                    top: 0px;
+                    bottom: 0px;
+                    right: 0px;
+                    left: 0px;
+                }
+                .contact-header {
+                    padding: 30px 0;
+                    padding-top: 0;
+                    border-bottom: 1px solid #eee;
+                    #btn-close {
+                        width: 100%;
+                        display: block;
+                        button {
+                            background: #fff;
+                            border: none;
+                            display: block;
+                            color: red;
+                            width: 20%;
+                            margin-left: 80%;
+                            font-size: 20px;
+                            padding: 10px;
+                            &:focus {
+                                outline: none;
+                                background: #eee;
+                            }
+                        }
+                    }
+                    .picture {
+                        float: none;
+                        width: 100%;
+                        .avatar {
+                            background: #eee;
+                            border-radius: 100%;
+                            height: 80px;
+                            width: 80px;
+                            margin: 0 auto;
+                        }
+                    }
+                    .desc {
+                        width: 100%;
+                        float: none;
+                        position: relative;
+                        padding-left: 30px;
+                        span.company {
+                            right: 10px;
+                            position: absolute;
+                        }
+                        h2 {
+                            font-size: 20px;
+                        }
+                        p {
+                            text-align: center;
+                            margin: 4px 0;
+                            color: #666;
+                            margin-bottom: 10px;
+                        }
+                        .contact-action {
+                            text-align: center;
+                        }
+                    }
+                }
+                .contact-body {
+                    ul {
+                        padding: 20px;
+                        li {
+                            padding: 10px;
+                            padding-left: 20px;
+                            h4 {
+                                font-size: 20px;
+                                margin-bottom: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        div#add-new-contact {
+            background: #fff;
+            width: 100%;
+            box-shadow: 0 1px 2px 0 #ccc;
+            margin-bottom: 5c0px;
+            header {
+                text-align: center;
+                padding: 10px;
+                border-bottom: 1px solid #eee;
+                @include clearfix;
+                div.icon {
+                    display: none;
+                }
+                div.title {
+                    width: 100%;
+                    float: left;
+                    padding-left: 20px;
+                    padding-top: 10px;
+                    h3 {
+                        margin: 0;
+                        font-size: 20px;
+                        font-weight: 900;
+                        color: #686868;
+                    }
+                    p {
+                        display: block;
+                        font-size: 12px;
+                        font-weight: 300;
+                        margin: 0;
+                    }
+                }
+            }
+            div.form-tambah {
+                padding: 10px 0;
+                .row {
+                    width: 100%;
+                    padding: 0px;
+                    @include clearfix;
+                    .full {
+                        margin-top: 10px;
+                        width: 100%;
+                        position: relative;
+                        padding: 10px;
+                        button {
+                            position: relative;
+                            width: 100%;
+                            display: block;
+                            box-sizing: border-box;
+                            i {
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                    .half {
+                        width: 100%;
+                        float: none;
+                        padding: 0 15px;
+                        label {
+                            display: block;
+                            font-weight: 800;
+                            color: #777;
+                            margin: 5px 0;
+                        }
+                        input,
+                        select {
+                            margin-bottom: 30px;
+                            display: block;
+                            border: none;
+                            background: #f8f8f8;
+                            padding: 10px 10px;
+                            font-size: 16px;
+                            font-weight: 300;
+                            width: 100%;
+                            &:focus {
+                                background: #eee;
+                                outline: none;
+                            }
+                            &::-webkit-input-placeholder {
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    div.overlay {
+        background: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 40;
+    }
+    .container-login {
+        padding: 10px;
+        padding-top: 80px;
+        @include roboto;
+        div.container-form {
+            width: 100%;
+            padding: 0 5px;
+            input {
+                @include segoe;
+                padding: 10px;
+            }
+            button {
+                @include segoe;
+                padding: 10px;
+            }
+        }
+        h1 {
+            font-weight: 300;
+            font-size: 30px;
+            margin-bottom: 0;
+            i {
+                margin-right: 15px;
+            }
+        }
+        p {
+            margin-top: 5px;
+            font-weight: 300;
+            font-size: 14px;
+            &:before {
+                content: open-quote;
+            }
+            &:after {
+                content: close-quote;
+            }
+        }
+    }
+}
